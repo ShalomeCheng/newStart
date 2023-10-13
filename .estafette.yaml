@@ -1,0 +1,103 @@
+# https://estafette.io/usage/manifest/#labels
+labels:
+  app: foo
+  team: cosmos
+  language: dotnet-core
+
+# https://estafette.io/usage/manifest/#build-stages
+stages:
+  # https://github.com/estafette/estafette-extension-dotnet
+  restore:
+    image: extensions/dotnet:6.0-stable
+    action: restore
+
+  build:
+    image: extensions/dotnet:6.0-stable
+    action: build
+
+  unit-tests:
+    image: extensions/dotnet:6.0-stable
+    action: unit-test
+
+  integration-tests:
+    image: extensions/dotnet:6.0-stable
+    action: integration-test
+
+  publish:
+    image: extensions/dotnet:6.0-stable
+    action: publish
+
+  sonarqube:
+    image: extensions/dotnet:6.0-stable
+    action: analyze-sonarqube
+
+  # https://estafette.io/usage/extensions/estafette-extensions/#extensions-docker
+  bake:
+    image: extensions/docker:stable
+    action: build
+    path: ./publish
+    repositories:
+    - eu.gcr.io/travix-com
+
+  push-to-gcr-io:
+    image: extensions/docker:stable
+    action: push
+    repositories:
+    - eu.gcr.io/travix-com
+
+# https://estafette.io/usage/manifest/#releases
+releases:
+  dev-cluster:
+    stages:
+      deploy:
+        image: extensions/gke:stable
+        visibility: private
+        useGoogleCloudCredentials: true
+        disableServiceAccountKeyRotation: true
+        container:
+          port: 5000
+          metrics:
+            port: 9090
+          env:
+            ASPNETCORE_ENVIRONMENT: "Development"
+            Foo: "Dev value"
+          secretEnv:
+            Password: estafette.secret(hdF9ygmCk85Hg8PG.5gzutGT6DMvsEouTJVX8OWyAbsiVyZ3e6x0Om-MdWnqBWgQ3-dsCbkxmE5tMs39z.s1354SKhVcypXdGAJBi1ZCrQJYTfycWHqBAcg7FAA3liUlgS6cpX126PW6ZBH6UQgduG-uhxKQxpJvNY_8Epax0YYRdnQc2U1q3P4QQ=)
+
+  stg-cluster:
+    stages:
+      deploy:
+        image: extensions/gke:stable
+        visibility: private
+        useGoogleCloudCredentials: true
+        disableServiceAccountKeyRotation: true
+        container:
+          port: 5000
+          metrics:
+            port: 9090
+          env:
+            ASPNETCORE_ENVIRONMENT: "Staging"
+            Foo: "Staging value"
+          secretEnv:
+            Password: estafette.secret(hdF9ygmCk85Hg8PG.5gzutGT6DMvsEouTJVX8OWyAbsiVyZ3e6x0Om-MdWnqBWgQ3-dsCbkxmE5tMs39z.s1354SKhVcypXdGAJBi1ZCrQJYTfycWHqBAcg7FAA3liUlgS6cpX126PW6ZBH6UQgduG-uhxKQxpJvNY_8Epax0YYRdnQc2U1q3P4QQ=)
+
+  prd-cluster:
+    actions:
+    - name: deploy-canary
+    - name: deploy-stable
+    - name: rollback-canary
+    stages:
+      deploy:
+        image: extensions/gke:stable
+        visibility: private
+        useGoogleCloudCredentials: true
+        disableServiceAccountKeyRotation: true
+        container:
+          port: 5000
+          metrics:
+            port: 9090
+          env:
+            ASPNETCORE_ENVIRONMENT: "Production"
+            Foo: "Prod value"
+          secretEnv:
+            Password: estafette.secret(hdF9ygmCk85Hg8PG.5gzutGT6DMvsEouTJVX8OWyAbsiVyZ3e6x0Om-MdWnqBWgQ3-dsCbkxmE5tMs39z.s1354SKhVcypXdGAJBi1ZCrQJYTfycWHqBAcg7FAA3liUlgS6cpX126PW6ZBH6UQgduG-uhxKQxpJvNY_8Epax0YYRdnQc2U1q3P4QQ=)

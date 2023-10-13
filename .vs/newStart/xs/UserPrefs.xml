@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{80391CBC-A2B0-4237-8F81-63C473AFE49F}|newStart">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/newStart.WebService/Startup.cs">
+    <Files>
+      <File FileName="src/newStart.WebService/Controllers/ExampleController.cs" Line="1" Column="1" />
+      <File FileName="src/newStart.WebService/Startup.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="newStart" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="newStart.WebService" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Startup.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.src.newStart.WebService PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

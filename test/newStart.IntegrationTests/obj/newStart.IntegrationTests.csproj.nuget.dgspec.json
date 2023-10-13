@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/chengxuanlu/Documents/repos/travix/newStart/test/newStart.IntegrationTests/newStart.IntegrationTests.csproj": {}
+  },
+  "projects": {
+    "/Users/chengxuanlu/Documents/repos/travix/newStart/src/newStart.WebService/newStart.WebService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/chengxuanlu/Documents/repos/travix/newStart/src/newStart.WebService/newStart.WebService.csproj",
+        "projectName": "newStart.WebService",
+        "projectPath": "/Users/chengxuanlu/Documents/repos/travix/newStart/src/newStart.WebService/newStart.WebService.csproj",
+        "packagesPath": "/Users/chengxuanlu/.nuget/packages/",
+        "outputPath": "/Users/chengxuanlu/Documents/repos/travix/newStart/src/newStart.WebService/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/chengxuanlu/Documents/repos/travix/newStart/NuGet.Config",
+          "/Users/chengxuanlu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/7.0.309/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://travix-int.myget.org/F/private-nuget/auth/237e7bc9-de03-4287-8fac-1b5a5bb39db8/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Travix.Common.Bootstrapper.Web": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/chengxuanlu/Documents/repos/travix/newStart/test/newStart.IntegrationTests/newStart.IntegrationTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/chengxuanlu/Documents/repos/travix/newStart/test/newStart.IntegrationTests/newStart.IntegrationTests.csproj",
+        "projectName": "newStart.IntegrationTests",
+        "projectPath": "/Users/chengxuanlu/Documents/repos/travix/newStart/test/newStart.IntegrationTests/newStart.IntegrationTests.csproj",
+        "packagesPath": "/Users/chengxuanlu/.nuget/packages/",
+        "outputPath": "/Users/chengxuanlu/Documents/repos/travix/newStart/test/newStart.IntegrationTests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/chengxuanlu/Documents/repos/travix/newStart/NuGet.Config",
+          "/Users/chengxuanlu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://travix-int.myget.org/F/private-nuget/auth/237e7bc9-de03-4287-8fac-1b5a5bb39db8/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/chengxuanlu/Documents/repos/travix/newStart/src/newStart.WebService/newStart.WebService.csproj": {
+                "projectPath": "/Users/chengxuanlu/Documents/repos/travix/newStart/src/newStart.WebService/newStart.WebService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.TestHost": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.0.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
