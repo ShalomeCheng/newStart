@@ -30,7 +30,7 @@ namespace travix.demo.WebService.Controllers
         [Route("HomeView")]
         public IActionResult HomeView()
         {
-            return View("IndexA");
+            return View("Index");//the name is correspond with the View File Name
         }
     }
 }
